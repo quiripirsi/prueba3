@@ -7,12 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ms-cine
+        - id: cine
           uri: ${URL_CINE}
           predicates:
             - Path=/api/v1/peliculas/**, /api/v1/salas/**
 
-        - id: ms-ventas
+        - id: venta
           uri: ${URL_VENTAS}
           predicates:
             - Path=/api/v1/clientes/**, /api/v1/confiteria/**, /api/v1/reservas/**
