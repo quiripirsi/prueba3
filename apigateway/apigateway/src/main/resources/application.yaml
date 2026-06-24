@@ -7,12 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: cine-service
-          uri: http://localhost:8081
+        - id: ms-cine
+          uri: ${URL_CINE}
           predicates:
             - Path=/api/v1/peliculas/**, /api/v1/salas/**
 
-        - id: venta-service
-          uri: http://localhost:8082
+        - id: ms-ventas
+          uri: ${URL_VENTAS}
           predicates:
             - Path=/api/v1/clientes/**, /api/v1/confiteria/**, /api/v1/reservas/**
