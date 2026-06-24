@@ -1,16 +1,14 @@
 server:
   port: ${PORT:8080}
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       routes:
         - id: ms-cine
-          uri: ${URL_CINE}
+          uri: https://cine-production-97f1.up.railway.app
           predicates:
             - Path=/api/v1/peliculas/**, /api/v1/salas/**
         - id: ms-ventas
-          uri: ${URL_VENTAS}
+          uri: https://venta-production-XXXX.up.railway.app 
           predicates:
             - Path=/api/v1/clientes/**, /api/v1/confiteria/**, /api/v1/reservas/**
